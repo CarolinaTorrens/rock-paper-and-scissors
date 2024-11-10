@@ -29,3 +29,10 @@ function getHumanChoice(){
 }
 
 getHumanChoice();
+
+
+// variables globales 
+
+let humanScore = 0;
+let computerScore = 0; 
+

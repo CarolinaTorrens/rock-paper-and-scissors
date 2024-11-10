@@ -1,0 +1,21 @@
+console.log("hola");
+
+
+// eleccion de la computadora 
+
+function getComputerChoice (){
+    let getComputer = Math.floor(Math.random()*3);
+    let election;
+    if (getComputer == 0){
+        election ="Scissors"
+        console.log(election);  
+    } else if (getComputer == 1){
+        election ="Rock"
+        console.log(election);
+    }else {
+        election ="Paper"
+        console.log(election);
+    }
+}
+
+getComputerChoice(); 

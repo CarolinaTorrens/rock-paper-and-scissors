@@ -19,3 +19,13 @@ function getComputerChoice (){
 }
 
 getComputerChoice(); 
+
+
+// eleccion humana 
+
+function getHumanChoice(){
+    let electionHuman = prompt("choose Rock Paper or Scissors");
+    console.log(electionHuman);
+}
+
+getHumanChoice();

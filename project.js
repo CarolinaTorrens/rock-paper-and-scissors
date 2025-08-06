@@ -1,76 +1,101 @@
-console.log("hola")
+console.log("hola");
 
-// let num = parseInt(prompt("Por favor ingresa un numero?","")) //para q se use hasta en internet explore
+const  ROCK = 1;
+const PAPER = 2;
+const SCISSORS = 3;
 
-// for (let i = 1; i <= num; i ++){
-//     if(i % 3 === 0 && i % 5 === 0){
-//         console.log("FizzBuzz")
-//     }else if(i % 3 === 0){
-//         console.log("Fizz")
-//     }else if(i % 5 === 0){
-//         console.log("Buzz")
-//     }else{
-//         console.log(i)
-//     }
-// }
+humanScore = 0;
+computerScore = 0; 
 
 
-
-// do {}while(condicion) // la primera vez si se va a ejecutar el codigo q esta antes del bucle 
-
-// break //
-// continue // fuerza a q salte a la siguiente condicion incluso si no ha terminado el codigo 
-// estos 3 son modales el codigo se para hasta que el usuario hace algo
-alert("hola") // funciones integradas del navegador solo muestra un mensaje  
-prompt() //pedir datos
-let b = confirm("Esta seguro que quieres borrarlo?") //dos opciones. esto es un booleano 
-console.log(b)
-
-// console.log(typeof num)
-
-function hola(name){
-    alert("hola" + name);
+function HumanChoice(){
+    let Human_Choice 
+    while(true){
+    Human_Choice = prompt("Escoge piedra, papel o tijera");
+    if (Human_Choice.toLowerCase()=== "piedra" ){
+        return ROCK;
+    }else if (Human_Choice.toLowerCase() === "papel"){
+        return PAPER;
+    }else if(Human_Choice.toLowerCase() === "tijera"){
+       return SCISSORS;
+    }else{
+        alert("Opcion no valida. por favor escoger piedra papel o tijera.");
+    }
+    
+   } 
 }
 
-hola(" caro")
+function MachineChoice(){
+    let Machine_Choice = Math.floor(Math.random()*3)+1;
+    return Machine_Choice;
+
+}
 
 
 
-// console.log("hola");
+function gameplay(){
+    for(let i = 0; i < 5; i++){
+    let Human_Choice = HumanChoice();
+    let Machine_Choice = MachineChoice();
+    if(Human_Choice === Machine_Choice){
+        console.log("es un empate") ;
+        
 
 
-// // eleccion de la computadora 
+}else{
+    console.log("no es empate");
+    console.log("tu eleccion: ", Human_Choice);
+    console.log("la eleccion de la maquina: ", Machine_Choice);
+   
 
-// function getComputerChoice (){
-//     let getComputer = Math.floor(Math.random()*3);
-//     let election;
-//     if (getComputer == 0){
-//         election ="Scissors"
-//         console.log(election);  
-//     } else if (getComputer == 1){
-//         election ="Rock"
-//         console.log(election);
-//     }else {
-//         election ="Paper"
-//         console.log(election);
-//     }
-// }
+    
+    if(Human_Choice === ROCK && Machine_Choice === SCISSORS || Human_Choice === PAPER && Machine_Choice === ROCK || Human_Choice === SCISSORS && Machine_Choice === PAPER){
+    console.log("GANASTE!")
+    humanScore += 1;
+    console.log( "humanScore= ", humanScore);
+    }else{
+       console.log("PERDISTE") 
+       computerScore +=1;
+       console.log( "computerScore= ", computerScore);
+    }
 
-// getComputerChoice(); 
+    }
+}
 
-
-// // eleccion humana 
-
-// function getHumanChoice(){
-//     let electionHuman = prompt("choose Rock Paper or Scissors");
-//     console.log(electionHuman);
-// }
-
-// getHumanChoice();
+}
 
 
-// // variables globales 
+   
+function decision() {
+    if (humanScore > computerScore){
+        console.log("felicitaciones ganaste el juego")
+    }else if(humanScore < computerScore){
+        console.log("Perdiste la partida")
+    }else{
+        console.log("es un empate")
+    }
 
-// let humanScore = 0;
-// let computerScore = 0; 
+}
+
+
+
+
+gameplay()
+
+decision()
+
+
+
+ 
+console.log("human score = ", humanScore, "computer Score =  ", computerScore )
+// console.log(HumanChoice() + 3 );
+
+
+
+
+
+
+
+
+
 

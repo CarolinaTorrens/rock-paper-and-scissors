@@ -88,7 +88,7 @@ decision()
 
  
 console.log("human score = ", humanScore, "computer Score =  ", computerScore )
-// console.log(HumanChoice() + 3 );
+
 
 
 
